@@ -157,7 +157,7 @@ matching the architecture SVG. Both reuse agentic_rag_lab.py (must sit in repo r
   weak judge; confidence gate overrules a collapsed reranker.
 - Config-stamping every results file caught model drift twice (load-bearing habit).
 - `.env` IS loaded (config.py calls `load_dotenv()`); key confirmed present
-  (`sk-proj…`), `GENERATOR=openai`, `OPENAI_MODEL=gpt-5.5`.
+  `GENERATOR=openai`, `OPENAI_MODEL=gpt-5.5`.
 - Operating rules unchanged: step-wise, honest analysis over validation, terse/
   directive, file-ready outputs, depth over coverage.
 
@@ -167,7 +167,7 @@ matching the architecture SVG. Both reuse agentic_rag_lab.py (must sit in repo r
 
 Windows 11, Intel Ultra 9 285K, RTX 5070 (12 GB), 32 GB RAM. Ollama native
 (nomic-embed-text 768-D, qwen2.5:7b). Qdrant server mode, `telco_ran`, 26,203
-points. Reranker bge-reranker-base. `.venv` at `C:\Users\jhama\telco-rag`.
+points. Reranker bge-reranker-base. `.venv` at `%USERPROFILE%	elco-rag`.
 Bring-up: `python bootstrap.py`. Corpus guard: `python eval\check_corpus.py`.
 Serve UI over http: `cd ui; python -m http.server 5173` → http://localhost:5173/console.html
 (NOT file://, or CORS blocks the engine).

@@ -7,3 +7,12 @@ data/
 *.pdf
 bm25_cache.pkl
 ui/node_modules
+backups/
+*.snapshot
+venv/
+env/
+.DS_Store
+*.log
+node_modules/
+.idea/
+.vscode/
