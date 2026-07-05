@@ -1,0 +1,83 @@
+{
+  "run": "ragas",
+  "timestamp": "20260704_214421",
+  "config": {
+    "generator": "ollama:qwen2.5:7b",
+    "judge": "openai:gpt-4o-mini",
+    "self_grading": false,
+    "embedder": "nomic-embed-text",
+    "k": 5,
+    "lane_k": 10,
+    "budget": 3,
+    "n_questions": 3,
+    "with_reference": false,
+    "qdrant_mode": "server",
+    "corpus_count": 26316,
+    "claim_tag": "claim-v1",
+    "verdict_tag": "verdict-v1",
+    "qgen_tag": "qgen-v1"
+  },
+  "summary": {
+    "overall": {
+      "faithfulness": 0.9583333333333334,
+      "answer_relevancy": 0.6181456701146266,
+      "context_precision": 0.7055555555555556,
+      "n": 3
+    },
+    "by_tier": {
+      "easy": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.71003874194786,
+        "context_precision": 1.0,
+        "n": 1
+      },
+      "medium": {
+        "faithfulness": 0.9375,
+        "answer_relevancy": 0.5721991341980099,
+        "context_precision": 0.5583333333333333,
+        "n": 2
+      },
+      "hard": {
+        "faithfulness": null,
+        "answer_relevancy": null,
+        "context_precision": null,
+        "n": 0
+      }
+    }
+  },
+  "per_query": [
+    {
+      "qid": "Q01",
+      "tier": "easy",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.71003874194786,
+      "context_precision": 1.0,
+      "n_claims": 5,
+      "n_supported": 5,
+      "llm_calls": 0,
+      "tool_calls": 3
+    },
+    {
+      "qid": "Q02",
+      "tier": "medium",
+      "faithfulness": 0.875,
+      "answer_relevancy": 0.5987697710281892,
+      "context_precision": 0.41666666666666663,
+      "n_claims": 8,
+      "n_supported": 7,
+      "llm_calls": 0,
+      "tool_calls": 3
+    },
+    {
+      "qid": "Q03",
+      "tier": "medium",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5456284973678306,
+      "context_precision": 0.7,
+      "n_claims": 8,
+      "n_supported": 8,
+      "llm_calls": 0,
+      "tool_calls": 3
+    }
+  ]
+}

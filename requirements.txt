@@ -1,0 +1,17 @@
+qdrant-client>=1.12
+requests>=2.31
+python-dotenv>=1.0
+pymupdf>=1.24
+tqdm>=4.66
+sentence-transformers>=3.0
+# torch is installed separately from the CUDA 12.8 index (RTX 5070 / sm_120):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+rank-bm25>=0.2.2   # rung 7a: pure-Python Okapi BM25 for the lexical lane
+fastapi>=0.110      # product sidecar (serve.py)
+uvicorn>=0.27       # ASGI server for the sidecar
+streamlit>=1.30     # NotebookLM-style UI (app.py), matches the architecture SVG
+pymupdf>=1.23       # PDF text extraction for uploads (fitz) - already used by extract.py
+# studio.py (NotebookLM-style UI) also needs: streamlit (above) + openai (optional, for the brain fallback)
+openai>=1.0         # OPTIONAL brain for the 5 patterns; studio falls back to local qwen if absent/unreachable
+python-docx>=1.1    # DOCX text extraction for uploads (/upload_file)
+beautifulsoup4>=4.12  # HTML parsing for deep web research (/research)

@@ -1,0 +1,15 @@
+# TelcoRAG vector store. Data persists on the HOST DISK via a bind mount, so it
+# survives container restarts, reboots, and closing your terminal. bootstrap.py
+# sets QDRANT_STORAGE to an ABSOLUTE path so the mount never depends on the current
+# working directory; a manual `docker compose up -d` from the project root uses the
+# ./qdrant_storage default. Data is lost ONLY if you delete that folder.
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: telco-qdrant
+    ports:
+      - "6333:6333"   # REST API + web dashboard
+      - "6334:6334"   # gRPC
+    volumes:
+      - ${QDRANT_STORAGE:-./qdrant_storage}:/qdrant/storage
+    restart: unless-stopped   # auto-restarts on reboot/Docker restart; respects a manual stop
